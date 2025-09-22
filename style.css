@@ -71,6 +71,11 @@ main { max-width: 900px; margin: 2rem auto; padding: 1rem; }
 }
 .btn:hover { background: #00d994; }
 
+.socials span {
+  color: #00ffb0;
+  font-weight: 500;
+}
+
 /* Socials */
 .socials a {
   margin-right: 1rem;
@@ -88,3 +93,4 @@ footer {
   font-size: .9rem;
   color: #777;
 }
+
