@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortex | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <nav>
+      <a href="index.html" class="active">🏠 Home</a>
+      <a href="about.html">🙋 About</a>
+      <a href="projects.html">💻 Projects</a>
+      <a href="contact.html">📩 Contact</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <h1>Hey, I'm Vortex ⚡</h1>
+    <p style="font-size:1.5rem;">Call me a  <span id="typing-text"></span></p>
+
+    <div class="home-buttons">
+      <a href="projects.html" class="btn">💻 View Projects</a>
+      <a href="contact.html" class="btn">📩 Contact Me</a>
+    </div>
+
+    <div class="home-stats">
+      <span>🖥️ 5+ Projects</span>
+      <span>🔒 Bug Bounty Hunter</span>
+      <span>🤖 AI & Security</span>
+      <span>🎮 Gaming / Strategy</span>
+    </div>
+
+    <p class="home-quote">“Hack, Learn, Build, Repeat ⚡”</p>
+  </main>
+
+  <script>
+    const texts = ["Cybersecurity Student ⚡", "Red Teamer 🔐", "Bug Bounty Hunter 🐞", "AI Explorer 🤖"];
+    let count = 0, index = 0, currentText = '', letter = '';
+    (function type(){
+      if(count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.getElementById('typing-text').textContent = letter;
+      if(letter.length === currentText.length){
+        count++;
+        index = 0;
+        setTimeout(type, 1500);
+      } else {
+        setTimeout(type, 150);
+      }
+    }());
+  </script>
+</body>
+</html>

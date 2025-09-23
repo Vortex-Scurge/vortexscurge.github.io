@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortex | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Adjust spacing in contact page */
+    .content h1 {
+    margin-bottom: 10px; /* less space below heading */
+    }
+
+    .content p {
+    margin-top: 0;       /* remove extra space above paragraph */
+    margin-bottom: 0; /* space before form */
+    line-height: 1.4;    /* optional: tighten lines */
+    }
+
+    /* Contact Container */
+    .contact-container {
+      display: flex;
+      gap: 40px; /* space between form and other ways section */
+      flex-wrap: wrap; /* wrap on smaller screens */
+      margin-top: 20px;
+    }
+
+    /* Form Box */
+    .contact-form-box {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+    }
+
+    .contact-form-box input,
+    .contact-form-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px 0;
+      border-radius: 5px;
+      border: none;
+      background-color: #1f1f1f;
+      color: #fff;
+    }
+
+    .contact-form-box button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4aa3ff;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form-box button:hover {
+      background-color: #1f7cd6;
+    }
+
+    /* Other Ways Section */
+    .contact-other-ways {
+      flex: 1;
+      min-width: 250px;
+      max-width: 400px;
+    }
+
+    .contact-other-ways h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .contact-other-ways ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-other-ways ul li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .contact-other-ways a {
+      color: #4aa3ff;
+      text-decoration: none;
+    }
+
+    .contact-other-ways a:hover {
+      text-decoration: underline;
+    }
+
+    /* Form Message */
+    #form-message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">🙋 About</a>
+      <a href="projects.html">💻 Projects</a>
+      <a href="contact.html" class="active">📩 Contact</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>📩 Contact Me</h1>
+    <p>Reach out Vortex for collaborations, bug bounty, or just to say hi!</p>
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-form-box">
+        <form id="contact-form" action="https://formspree.io/f/myznyyqy" method="POST">
+          <label for="name">Name</label><br>
+          <input type="text" name="name" placeholder="Your Name" required><br>
+
+          <label for="email">Email</label><br>
+          <input type="email" name="email" placeholder="Your Email" required><br>
+
+          <label for="message">Message</label><br>
+          <textarea name="message" placeholder="Your Message" rows="6" required></textarea><br>
+
+          <button type="submit">Send 📩</button>
+        </form>
+        <p id="form-message"></p>
+      </div>
+
+      <!-- Other Ways to Reach Me -->
+      <div class="contact-other-ways">
+        <h2>Other Ways to Reach Me</h2>
+        <ul>
+          <li>📧 Email: <a href="mailto:aravinanravichandiran@gmail.com">aravinanravichandiran@gmail.com</a></li>
+          <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/aravindan-ravichandran-2b2144337" target="_blank">LinkedIn</a></li>
+          <li>🐱 GitHub: <a href="https://github.com/Vortex-Scurge" target="_blank">GitHub</a></li>
+          <li>🐦 Instagram: <a href="https://www.instagram.com/vortexscurge.exe" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS for Formspree Submission -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const msg = document.getElementById('form-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          msg.textContent = "Message sent successfully! 🎉";
+          msg.style.color = "#4aa3ff";
+          form.reset();
+        } else {
+          msg.textContent = "Failed to send message. ❌";
+          msg.style.color = "#ff4a4a";
+        }
+      }).catch(() => {
+        msg.textContent = "Failed to send message. ❌";
+        msg.style.color = "#ff4a4a";
+      });
+    });
+  </script>
+</body>
+</html>
