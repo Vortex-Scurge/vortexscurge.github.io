@@ -1,0 +1,223 @@
+/* ---------------- Reset ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+}
+
+/* ---------------- Sidebar ---------------- */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('your-image.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering nav */
+  align-items: center;
+  z-index: 1;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+  z-index: 2;
+}
+
+.sidebar nav a {
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #4aa3ff33;
+  color: #4aa3ff;
+}
+
+/* ---------------- Main Content ---------------- */
+.content {
+  margin-left: 240px; /* matches sidebar width */
+  padding: 40px 30px; /* reasonable padding */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ---------------- Headings & Text ---------------- */
+h1, h2 {
+  color: #4aa3ff;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ---------------- Home Page Elements ---------------- */
+#typing-text {
+  color: #4aa3ff;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+.home-buttons .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 15px;
+  background-color: #4aa3ff;
+  color: #0f0f0f;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px #4aa3ff;
+}
+
+.home-stats {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.home-stats span {
+  background-color: #4aa3ff33;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.home-stats span:hover {
+  transform: scale(1.1);
+}
+
+.home-quote {
+  margin-top: 30px;
+  font-style: italic;
+  color: #4aa3ff99;
+}
+
+/* ---------------- Project Tiles ---------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-tile {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(74, 163, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(74, 163, 255, 0.35);
+  background-color: #1f1f1f;
+}
+
+.project-tile .tags {
+  margin: 10px 0;
+}
+
+.project-tile .tags span {
+  display: inline-block;
+  background-color: #4aa3ff33;
+  color: #4aa3ff;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease;
+}
+
+.project-tile .tags span:hover {
+  transform: scale(1.1);
+}
+
+.project-tile .links a {
+  text-decoration: none;
+  color: #4aa3ff;
+  font-weight: bold;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.project-tile .links a:hover {
+  color: #ffffff;
+}
+
+/* ---------------- Contact Page Form ---------------- */
+.contact-form-box {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #4aa3ff55;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.contact-form-box button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4aa3ff;
+  color: #0f0f0f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #4aa3ff;
+}
+
+#form-message {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #4aa3ff;
+}
